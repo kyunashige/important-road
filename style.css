@@ -49,6 +49,12 @@ form {
     z-index: 10;
 }
 
+#bg-toggle {
+    color: red;
+    background-color: black;
+    z-index: 10;
+}
+
 #description {
     position: absolute;
     top: 0;

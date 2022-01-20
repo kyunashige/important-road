@@ -16,10 +16,26 @@ const map = L.map("map", {
     zoom: 16,
     center: presetCoord[choice(["Shizuoka", "Hyougo", "TMU"])],
     preferCanvas: true,
-    layers: new L.StamenTileLayer("toner", {
-        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
-    })
 })
+
+const bgToggle = document.getElementById('bg-toggle')
+let bgVisible = true
+bgToggle.innerHTML = "背景を非表示"
+const toner = L.StamenTileLayer("toner", {
+    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
+})
+map.addLayer(toner)
+bgToggle.addEventListener('click', function () {
+    if (bgVisible) {
+        map.removeLayer(toner)
+        bgVisible = false
+        bgToggle.innerHTML = "背景を表示"
+    } else {
+        map.addLayer(toner)
+        bgVisible = true
+        bgToggle.innerHTML = "背景を非表示"
+    }
+});
 
 L.hash(map)
 
