@@ -1,0 +1,142 @@
+:root {
+    --background-color: #555555;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.leaflet-pane div {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+#mini-map {
+    position: absolute;
+    top: 5%;
+    bottom: 75%;
+    left: 80%;
+    right: 5%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+form {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    margin: auto;
+    padding: 8px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    background-color: rgba(230, 230, 230, 0.8);
+    border: 1px solid #333333;
+    z-index: 10;
+}
+
+#description {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+#description:focus-within {
+    z-index: 100;
+}
+
+#description .bg {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--background-color);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+#description:focus-within .bg {
+    visibility: visible;
+    opacity: 0.6;
+}
+
+.button {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 1000;
+}
+
+#description:focus-within .button {
+    pointer-events: none;
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    width: 10px;
+    margin: auto;
+    margin-top: 10px;
+    border-width: 2px 2px 0 0;
+    border-style: solid;
+    border-color: gray;
+    transform: rotate(135deg);
+}
+
+#description:focus-within .arrow-icon {
+    border-color: white;
+}
+
+#content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    background-color: var(--background-color);
+    border: 1px solid white;
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+#description:focus-within #content {
+    visibility: visible;
+    opacity: 0.8;
+}
+
+#content * {
+    padding-left: 10px;
+    color: white;
+}

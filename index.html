@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Leafletデモ</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.8.1/src/leaflet.geometryutil.js"></script>
+    <script src="https://rawgit.com/makinacorpus/Leaflet.AlmostOver/b1629f00c9708d4843829f2aef9e5791d0ad4a53/src/leaflet.almostover.js"></script>
+    <script src="https://unpkg.com/leaflet-hash@0.2.1/leaflet-hash.js"></script>
+    <script src="/Users/tomoshige/fri2/day13/dijkstra.js"></script>
+
+    <div id="map"></div>
+    <div id="mini-map"></div>
+    <div>
+        <form name="form">
+            <label for="form">Preset:</label>
+            <input type="radio" name="radios" id="Tokyo">
+            <label for="Tokyo">Tokyo</label>
+            <input type="radio" name="radios" id="Kyoto">
+            <label for="Kyoto">Kyoto</label>
+        </form>
+    </div>
+    <div id="description">
+        <div class="bg"></div>
+        <div class="button" tabindex="0">
+            <span class="arrow-icon"></span>
+        </div>
+        <div id="content" tabindex="0">
+            <h1># 道の重要度を可視化</h1>
+            <h2>## 背景</h2>
+            <p>橋について書く．</p>
+            <h2>## どんな道が重要か</h2>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
