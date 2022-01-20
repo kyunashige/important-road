@@ -191,8 +191,8 @@ const renderPathsCalcDiff = (target) => {
         distDiffMax[dst] = Math.max(...[...Array(srcs.length).keys()].map(idx => {
             const after = distAfter[idx][dst]
             const before = distBefore[idx][dst]
-            if (after === Infinity && before === Infinity) {
-                return 0
+            if (before === Infinity) {
+                return Infinity
             }
             return after - before
         }))

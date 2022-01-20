@@ -1,4 +1,4 @@
-# クリックした道が重要か色で伝える
+# クリックした道路の重要性を色で伝える
 
 ![name](https://img.shields.io/badge/時空間情報処理特論-blue.svg)
 
@@ -16,15 +16,12 @@
 
 ここでは，道路中心線[^2]の重要度を可視化してみたい．
 
-ある道路が突然消えた時に，特定の場所までの最短距離がどれだけ長くなったかに応じて，色（緑，黄，赤，黒）を変えることにした．
+道路 e が与える影響度に応じで，各地点を塗り分けすることにした．
+緑，黄，赤，黒の 4 色を用いた（緑なら影響なし，黒なら通行できなくなったことを表す）．
 
 ---
 
-道路 <img src=
-"https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+e"
-alt="e"> が地点 <img src=
-"https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+s"
-alt="s"> に与える影響を次式で定義する．
+道路 e が地点 s に与える影響度を次式で定義する．
 
 <img src=importance.png>
 
