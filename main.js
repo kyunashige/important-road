@@ -16,8 +16,8 @@ const map = L.map("map", {
     zoom: 16,
     center: presetCoord[choice(["Shizuoka", "Hyougo", "TMU"])],
     preferCanvas: true,
-    layers: new L.tileLayer("http://tile.stamen.com/toner/{z}/{x}/{y}.png", {
-        attribution: "<a href='http://maps.stamen.com/' target='_blank'>Map tiles</a> by <a href='https://stamen.com' target='_blank'>Stamen Design</a>, under <a href='https://creativecommons.org/licenses/by/3.0' target='_blank'>CC BY 3.0</a>. Data by <a href='https://openstreetmap.org' target='_blank'>OpenStreetMap</a>, under <a href='https://creativecommons.org/licenses/by-sa/3.0' target='_blank'>CC BY SA</a>."
+    layers: new L.StamenTileLayer("toner", {
+        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
     })
 })
 
@@ -242,10 +242,8 @@ map.on('almost:click', (e) => {
 })
 
 map.on("zoom", (e) => {
-    console.log("*".repeat(123))
     if (e.target._zoom < 14) {
         if (nodeMarkers) map.removeLayer(nodeMarkers)
         if (shortestPaths) map.removeLayer(shortestPaths)
     }
-    console.log(prevLayer)
 })
