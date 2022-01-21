@@ -21,17 +21,17 @@ const map = L.map("map", {
 const bgToggle = document.getElementById('bg-toggle')
 let bgVisible = true
 bgToggle.innerHTML = "背景を非表示"
-const toner = L.StamenTileLayer("toner", {
+const tonerLayer = L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png', {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
 })
-map.addLayer(toner)
+map.addLayer(tonerLayer)
 bgToggle.addEventListener('click', function () {
     if (bgVisible) {
-        map.removeLayer(toner)
+        map.removeLayer(tonerLayer)
         bgVisible = false
         bgToggle.innerHTML = "背景を表示"
     } else {
-        map.addLayer(toner)
+        map.addLayer(tonerLayer)
         bgVisible = true
         bgToggle.innerHTML = "背景を非表示"
     }
