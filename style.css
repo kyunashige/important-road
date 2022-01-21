@@ -132,6 +132,7 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: 0.2s;
+    overflow: hidden;
 }
 
 #description:focus-within #content {
@@ -142,4 +143,8 @@ body {
 #content * {
     padding-left: 10px;
     color: white;
+}
+
+#content ul {
+    margin-left: 30px;
 }
